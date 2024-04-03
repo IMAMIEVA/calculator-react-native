@@ -8,6 +8,7 @@ export default function App() {
       {/*<Text>ГОВНО</Text>*/}
       {/*<StatusBar style="auto" />*/}
       <Text>JS для пидоров</Text>
+      <Text>СОгласен</Text>
 
       <Calculator/>
     </View>
