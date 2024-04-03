@@ -7,6 +7,7 @@ export default function App() {
     <View style={styles.container}>
       {/*<Text>ГОВНО</Text>*/}
       {/*<StatusBar style="auto" />*/}
+      <Text>JS для пидоров</Text>
 
       <Calculator/>
     </View>
