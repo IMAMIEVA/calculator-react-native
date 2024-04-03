@@ -43,21 +43,44 @@ export default function Calculator() {
         setFirstValue(result);
     };
 
+    const handleReverse = () => {
+        const Value = -parseFloat(displayValue);
+        setDisplayValue(Value.toString());
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.display}>{displayValue}</Text>
+
             <View style={styles.row}>
-                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(1)}>
-                    <Text style={styles.buttonText}>1</Text>
+                <TouchableOpacity style={[styles.button, { backgroundColor: '#D3D3D3' }]} onPress={() => setDisplayValue('0')}>
+                    <Text style={[styles.buttonText, { color: 'black' }]}>AC</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(2)}>
-                    <Text style={styles.buttonText}>2</Text>
+                <TouchableOpacity style={[styles.button, { backgroundColor: '#D3D3D3' }]} onPress={() => handleReverse()}>
+                    <Text style={[styles.buttonText, { color: 'black' }]}>±</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(3)}>
-                    <Text style={styles.buttonText}>3</Text>
+                <TouchableOpacity style={[styles.button, { backgroundColor: '#D3D3D3' }]} onPress={() => setDisplayValue('0')}>
+                    <Text style={[styles.buttonText, { color: 'black' }]}>%</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.button, { backgroundColor: '#FFA500' }]} onPress={() => handleOperatorPress('+')}>
-                    <Text style={styles.buttonText}>+</Text>
+                <TouchableOpacity style={[styles.button, { backgroundColor: '#FFA500' }]} onPress={() => handleOperatorPress('/')}>
+                    <Text style={styles.buttonText}>÷</Text>
+                </TouchableOpacity>
+            </View>
+            
+
+            <View style={styles.row}>
+
+                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(7)}>
+                    <Text style={styles.buttonText}>7</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(8)}>
+                    <Text style={styles.buttonText}>8</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(9)}>
+                    <Text style={styles.buttonText}>9</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.button, { backgroundColor: '#FFA500' }]} onPress={() => handleOperatorPress('*')}>
+                    <Text style={styles.buttonText}>×</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.row}>
@@ -75,32 +98,31 @@ export default function Calculator() {
                 </TouchableOpacity>
             </View>
             <View style={styles.row}>
-                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(7)}>
-                    <Text style={styles.buttonText}>7</Text>
+                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(1)}>
+                    <Text style={styles.buttonText}>1</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(8)}>
-                    <Text style={styles.buttonText}>8</Text>
+                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(2)}>
+                    <Text style={styles.buttonText}>2</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(9)}>
-                    <Text style={styles.buttonText}>9</Text>
+                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(3)}>
+                    <Text style={styles.buttonText}>3</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.button, { backgroundColor: '#FFA500' }]} onPress={() => handleOperatorPress('*')}>
-                    <Text style={styles.buttonText}>*</Text>
+                <TouchableOpacity style={[styles.button, { backgroundColor: '#FFA500' }]} onPress={() => handleOperatorPress('+')}>
+                    <Text style={styles.buttonText}>+</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.row}>
-                <TouchableOpacity style={[styles.button, { backgroundColor: '#D3D3D3' }]} onPress={() => setDisplayValue('0')}>
-                    <Text style={[styles.buttonText, { color: 'black' }]}>AC</Text>
-                </TouchableOpacity>
+            
                 <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(0)}>
                     <Text style={styles.buttonText}>0</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.button]} onPress= {() => handleNumberPress(',')} >
+                    <Text style={styles.buttonText}>,</Text>
+
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.button, { backgroundColor: '#FFA500' }]} onPress={handleEqualsPress}>
                     <Text style={styles.buttonText}>=</Text>
 
-                </TouchableOpacity>
-                <TouchableOpacity style={[styles.button, { backgroundColor: '#FFA500' }]} onPress={() => handleOperatorPress('/')}>
-                    <Text style={styles.buttonText}>/</Text>
                 </TouchableOpacity>
             </View>
         </View>
