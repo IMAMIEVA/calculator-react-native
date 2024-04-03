@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const Calculator = () => {
+export default function Calculator() {
     const [displayValue, setDisplayValue] = useState('0');
     const [operator, setOperator] = useState(null);
     const [firstValue, setFirstValue] = useState(null);
@@ -139,4 +139,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Calculator;
+// export default Calculator;
