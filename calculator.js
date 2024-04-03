@@ -48,6 +48,10 @@ export default function Calculator() {
         setDisplayValue(Value.toString());
     }
 
+    const makePercentage = () => {
+        console.log("А в ТЗ этой функции не было.");
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.display}>{displayValue}</Text>
@@ -113,7 +117,7 @@ export default function Calculator() {
             </View>
             <View style={styles.row}>
             
-                <TouchableOpacity style={styles.button} onPress={() => handleNumberPress(0)}>
+                <TouchableOpacity style={[styles.button, {width: 165}]} onPress={() => handleNumberPress(0)}>
                     <Text style={styles.buttonText}>0</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.button]} onPress= {() => handleNumberPress(',')} >
@@ -129,14 +133,16 @@ export default function Calculator() {
     );
 };
 
+const buttonSize = 85;
+
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'black',
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
     },
     display: {
-        fontSize: 40,
+        fontSize: 90,
         textAlign: 'right',
         padding: 10,
         color: 'white',
@@ -147,17 +153,18 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     button: {
-        width: 70,
-        height: 70,
-        borderRadius: 35,
+        width: buttonSize,
+        height: buttonSize,
+        borderRadius: buttonSize/2,
         backgroundColor: '#808080',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 5,
     },
     buttonText: {
-        fontSize: 24,
+        fontSize: 30,
         color: 'white',
+        fontWeight: '400'
     },
 });
 

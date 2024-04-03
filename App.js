@@ -5,11 +5,6 @@ import Calculator from "./calculator";
 export default function App() {
   return (
     <View style={styles.container}>
-      {/*<Text>ГОВНО</Text>*/}
-      {/*<StatusBar style="auto" />*/}
-      <Text>JS для пидоров</Text>
-      <Text>СОгласен</Text>
-
       <Calculator/>
     </View>
   );
@@ -18,8 +13,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    flexDirection: "row",
+    backgroundColor: '#000',
+    alignItems: 'stretch',
     justifyContent: 'center',
   },
 });
